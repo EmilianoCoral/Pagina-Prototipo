@@ -1,0 +1,436 @@
+/* === ESTILOS GENERALES === */
+body {
+  font-family: 'Segoe UI', Arial, sans-serif;
+  margin: 0;
+  display: flex;
+  background-color: #f0f4f8;
+  color: #222;
+}
+
+/* === MENÚ LATERAL === */
+.menu {
+    width: 250px;
+    min-height: 100vh;        /* Al menos toda la altura de la pantalla */
+    background: #ffffff;
+    border-right: 2px solid #ccc;
+    padding: 20px;
+}
+
+
+.menu h2 {
+  text-align: center;
+  margin-bottom: 25px;
+}
+
+.menu ul {
+  list-style: none;
+  padding: 0;
+}
+
+.menu ul li {
+  margin: 18px 0;
+}
+
+.menu ul li a {
+  text-decoration: none;
+  color: #fff;
+  font-weight: bold;
+  font-size: 15px;
+  transition: color 0.3s;
+}
+
+.menu ul li a:hover {
+  color: #ff7b00;
+}
+
+/* === CONTENIDO PRINCIPAL === */
+.contenido {
+    margin-left: 270px;
+    padding: 20px;
+}
+
+
+/* === TÍTULO === */
+.titulo {
+  text-align: center;
+  background-color: #ffffff;
+  padding: 20px;
+  border-radius: 12px;
+  box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+  margin-bottom: 20px;
+  border-left: 5px solid #007bff;
+}
+
+.titulo h1 {
+  color: #002b5b;
+  margin-bottom: 10px;
+}
+
+.titulo p {
+  color: #555;
+}
+
+/* === GALERÍA DE PRODUCTOS === */
+.galeria {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(180px, 1fr));
+  gap: 20px;
+}
+
+/* Contenedor general de la tarjeta */
+.producto {
+    width: 320px;            /* Más ancho (antes normalmente 250px) */
+    min-height: 450px;       /* Más alto para que todo quepa mejor */
+    padding: 20px;
+    box-shadow: 0 4px 12px rgba(0,0,0,0.15);
+    border-radius: 12px;
+    background: white;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+}
+
+/* Imagen más grande pero controlada */
+.producto img {
+    width: 100%;
+    height: 200px;           /* Ajusta si quieres más */
+    object-fit: contain;
+    margin-bottom: 10px;
+}
+
+/* Título con más espacio */
+.producto h3 {
+    font-size: 17px;
+    font-weight: bold;
+    margin: 10px 0;
+    max-height: 80px;        /* MÁS ALTO para nombres largos */
+    overflow: hidden;
+    display: -webkit-box;
+    -webkit-line-clamp: 4;   /* Ahora permite hasta 4 líneas */
+    -webkit-box-orient: vertical;
+    text-overflow: ellipsis;
+    text-align: center;
+}
+
+
+.producto p {
+  color: #555;
+  font-size: 14px;
+  margin-bottom: 10px;
+}
+
+.producto button {
+  background-color: #007bff;
+  color: white;
+  border: none;
+  padding: 8px 12px;
+  border-radius: 6px;
+  cursor: pointer;
+  transition: background-color 0.3s;
+}
+
+.producto button:hover {
+  background-color: #0056b3;
+}
+
+/* === LOGO === */
+.logo {
+  position: fixed;          /* El logo permanece visible aunque se haga scroll */
+  top: 15px;                /* Distancia desde la parte superior */
+  right: 15px;              /* Lo coloca en la esquina superior derecha */
+  width: 80px;              /* Tamaño del logo */
+  height: auto;             /* Mantiene proporciones */
+  z-index: 1000;            /* Asegura que quede por encima de todo */
+  border-radius: 10px;      /* Bordes suaves (opcional) */
+  background-color: white;  /* Fondo blanco opcional (útil si el logo es transparente) */
+  padding: 5px;             /* Espacio alrededor (opcional) */
+  box-shadow: 0 2px 6px rgba(0,0,0,0.2); /* Sombra suave */
+}
+
+/* === LOGIN === */
+.login-page {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+  background: linear-gradient(135deg, #007bff, #00a6ff);
+}
+
+.login-container {
+  background: white;
+  padding: 30px 40px;
+  border-radius: 12px;
+  box-shadow: 0 4px 10px rgba(0,0,0,0.3);
+  text-align: center;
+  width: 320px;
+}
+
+.login-container h2 {
+  color: #002b5b;
+  margin-bottom: 20px;
+}
+
+.login-container input {
+  width: 100%;
+  padding: 10px;
+  margin: 10px 0;
+  border-radius: 6px;
+  border: 1px solid #ccc;
+}
+
+.login-container button {
+  background-color: #007bff;
+  color: white;
+  border: none;
+  padding: 10px;
+  width: 100%;
+  border-radius: 6px;
+  cursor: pointer;
+}
+
+.login-container button:hover {
+  background-color: #0056b3;
+}
+
+.login-container a {
+  color: #007bff;
+  text-decoration: none;
+}
+
+.error {
+  color: red;
+  font-size: 14px;
+  margin-bottom: 10px;
+}
+
+/* ============================
+   ESTILOS PARA LA PÁGINA CARRITO
+   ============================ */
+
+/* Contenedor principal del carrito */
+.carrito-container {
+    width: 80%;
+    margin: 120px auto 40px auto;
+    background: #ffffff;
+    padding: 25px;
+    border-radius: 15px;
+    box-shadow: 0 0 10px rgba(0,0,0,0.1);
+}
+
+/* Título del carrito */
+.carrito-container h2 {
+    text-align: center;
+    font-size: 28px;
+    margin-bottom: 25px;
+    color: #333;
+}
+
+/* Tabla del carrito */
+.carrito-tabla {
+    width: 100%;
+    border-collapse: collapse;
+}
+
+.carrito-tabla th {
+    background: #333;
+    color: white;
+    padding: 12px;
+    font-size: 16px;
+    text-align: left;
+}
+
+.carrito-tabla td {
+    padding: 12px;
+    border-bottom: 1px solid #ddd;
+}
+
+/* Cantidad (input number) */
+.carrito-tabla input[type="number"] {
+    width: 70px;
+    padding: 5px;
+    font-size: 15px;
+}
+
+/* Botón eliminar */
+.btn-eliminar {
+    background-color: #ff4d4d;
+    color: white;
+    padding: 7px 12px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: 0.2s;
+}
+
+.btn-eliminar:hover {
+    background-color: #cc0000;
+}
+
+/* Total general */
+.carrito-total {
+    text-align: right;
+    font-size: 22px;
+    margin-top: 20px;
+    font-weight: bold;
+}
+
+/* Botón para finalizar compra */
+.btn-comprar {
+    display: inline-block;
+    margin-top: 20px;
+    float: right;
+    background-color: #28a745;
+    color: white;
+    padding: 12px 20px;
+    border-radius: 5px;
+    text-decoration: none;
+    font-size: 18px;
+    transition: 0.2s;
+}
+
+.btn-comprar:hover {
+    background-color: #1e7e34;
+}
+
+/* ============================
+   AJUSTES DEL HEADER / MENÚ
+   ============================ */
+
+header {
+    position: fixed;
+    top: 0;
+    width: 100%;
+    background-color: #222;
+    padding: 10px 20px;
+    display: flex;
+    align-items: center;
+    z-index: 1000;
+}
+
+header img.logo {
+    width: 70px;
+    height: auto;
+    margin-right: 20px;
+}
+
+header h1 {
+    color: white;
+    font-size: 26px;
+    margin-right: auto;
+}
+
+nav ul {
+    list-style: none;
+    display: flex;
+    gap: 15px;
+}
+
+nav ul li a {
+    text-decoration: none;
+    color: white;
+    font-size: 18px;
+    padding: 8px 12px;
+    transition: 0.2s;
+}
+
+nav ul li a:hover {
+    background-color: #444;
+    border-radius: 5px;
+}
+
+/* === TABLA DE DESCUENTOS === */
+.tabla-descuentos {
+  width: 100%;
+  border-collapse: collapse;
+  background: white;
+  border-radius: 10px;
+  overflow: hidden;
+  box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+}
+
+.tabla-descuentos th {
+  background: #002b5b;
+  color: white;
+  padding: 12px;
+  text-align: left;
+}
+
+.tabla-descuentos td {
+  padding: 12px;
+  border-bottom: 1px solid #ddd;
+}
+
+/* === TABLA DE COMPRAS === */
+.tabla-compras {
+  width: 100%;
+  border-collapse: collapse;
+  background: white;
+  border-radius: 10px;
+  overflow: hidden;
+  box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+}
+
+.tabla-compras th {
+  background: #007bff;
+  color: white;
+  padding: 12px;
+}
+
+.tabla-compras td {
+  padding: 12px;
+  border-bottom: 1px solid #ddd;
+}
+
+.btn-detalles {
+  display: inline-block;
+  margin-top: 8px;
+  background-color: #ff7b00;
+  color: white;
+  padding: 7px 12px;
+  border-radius: 6px;
+  font-size: 14px;
+  text-decoration: none;
+  transition: background-color 0.3s;
+}
+
+.btn-detalles:hover {
+  background-color: #cc6300;
+}
+
+.detalles-container {
+  display: flex;
+  gap: 30px;
+  background: white;
+  padding: 25px;
+  border-radius: 12px;
+  box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+  margin-top: 30px;
+}
+
+.detalles-container img {
+  width: 280px;
+  border-radius: 10px;
+}
+
+.detalles-container .info {
+  flex: 1;
+}
+
+.btn-agregar {
+  background-color: #007bff;
+  padding: 10px 15px;
+  border: none;
+  color: white;
+  border-radius: 6px;
+  cursor: pointer;
+}
+
+.btn-regresar {
+  display: inline-block;
+  margin-top: 10px;
+  background-color: #555;
+  padding: 10px 15px;
+  color: white;
+  text-decoration: none;
+  border-radius: 6px;
+}
